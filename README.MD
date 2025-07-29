@@ -15,7 +15,13 @@ git clone https://github.com/Nxhar/OllamaMistralStarter.git
 cd OllamaMistralStarter
 ```
 
-## Step 2: Build the Model from the Modelfile
+## Step 2: Combine the Model Parts
+
+```sh
+cat mistral.gguf.part-aa mistral.gguf.part-ab mistral.gguf.part-ac > mistral.gguf
+```
+
+## Step 3: Build the Model from the Modelfile
 
 ```sh
 ollama create local-mistral -f Modelfile
@@ -23,7 +29,7 @@ ollama create local-mistral -f Modelfile
 
 This command will build the model named `local-mistral` using the provided `Modelfile`.
 
-## Step 3: Verify the Model
+## Step 4: Verify the Model
 
 List your local models to confirm:
 
@@ -33,13 +39,13 @@ ollama list
 
 You should see `local-mistral` in the list.
 
-## Step 4: Install Python Dependencies
+## Step 5: Install Python Dependencies
 
 ```sh
 pip install -r requirements.txt # You can add more requirements if you want to run langgraph
 ```
 
-## Step 5: Run the Example Script
+## Step 6: Run the Example Script
 
 ```sh
 python ollamarun.py
